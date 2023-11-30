@@ -21,9 +21,9 @@ int main() {
 
     // Roll number of dice and count successes
     for (int i = 0; i < NoDe; i++) {
-        int die = rand() % 6;
-        while (die == 0) {
-            die = rand() % 6;
+        int die = rand() % 7;
+        while (die == 0) {  // prevents rolling zeroes
+            die = rand() % 7;
         }
         printf("%d", die);
         if (die >= 5) {
@@ -32,18 +32,28 @@ int main() {
     }
     printf("\n");
 
+    // Count and output successes
     if (successes == 1) {
         printf("%s\n", "You have 1 success");
     } else {
         printf("%s %d %s \n", "You have", successes, "successes");
     }
     
-
+    // Determine whether or not roll was successful
     if (successes >= DC) {
         printf("%s\n", "Roll succeeded");
     } else {
         printf("%s\n", "Roll failed");
     }
+
+    // Determine whether or not The Computer will make an appearance
+    int computerDie = rand() % 7;
+    if (computerDie == 6) {
+        printf("%s\n", "FRIEND COMPUTER IS HERE");
+    } else {
+        printf("%s\n", "Friend Computer has not appeared");
+    }
+    
 
     return 0;
 }
