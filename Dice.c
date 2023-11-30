@@ -11,16 +11,16 @@ int main() {
 
     // Find Difficulty Class
     printf("%s", "Enter Difficulty Class: ");
-    int DC;
-    scanf("%d", &DC);
+    int difficultyClass;
+    scanf("%d", &difficultyClass);
 
     // Find number of dice
     printf("%s", "Enter number of dice: ");
-    int NoDe;
-    scanf("%d", &NoDe);
+    int node;
+    scanf("%d", &node);
 
     // Roll number of dice and count successes
-    for (int i = 0; i < NoDe; i++) {
+    for (int i = 0; i < node; i++) {
         int die = rand() % 7;
         while (die == 0) {  // prevents rolling zeroes
             die = rand() % 7;
@@ -40,7 +40,7 @@ int main() {
     }
     
     // Determine whether or not roll was successful
-    if (successes >= DC) {
+    if (successes >= difficultyClass) {
         printf("%s\n", "Roll succeeded");
     } else {
         printf("%s\n", "Roll failed");
@@ -54,6 +54,5 @@ int main() {
         printf("%s\n", "Friend Computer has not appeared");
     }
     
-
     return 0;
 }
