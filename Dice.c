@@ -26,8 +26,10 @@ int main() {
         }
     }
 
-    if (successes == DC) {
+    if (successes >= DC) {
         printf("%s\n", "Roll succeeded");
+    } else {
+        printf("%s\n", "Roll failed");
     }
 
     return 0;
